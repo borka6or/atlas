@@ -1,15 +1,21 @@
 var express = require('express'),
-    app = express();
+    app = express(),
+    server;
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
+app.set('view engine', 'jade');
+app.set('views', __dirname + '/views');
+
+app.get('/', function (request, response) {
+    response.render('index');
 });
 
-var server = app.listen(3000, function () {
+app.get('/yourMomma', function(request, response) {
+    response.send('your Moma is a hooker');
+});
 
-  var host = server.address().address;
-  var port = server.address().port;
+server = app.listen(3000, function () {
+    var host = server.address().address,
+        port = server.address().port;
 
-  console.log('Example app listening at http://%s:%s', host, port);
-
+    console.log('Example app listening at http://%s:%s', host, port);
 });
