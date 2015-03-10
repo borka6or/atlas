@@ -4,7 +4,7 @@
   "description": "",
   "main": "app/server/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start" : "node ./app/server/index.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/borka6or/atlas",
   "dependencies": {
-    "express": "^4.12.1"
+    "express": "4.12.1"
   }
 }

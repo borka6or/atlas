@@ -1,21 +1,20 @@
 var express = require('express'),
+    path = require('path'),
     app = express(),
     server;
 
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 
+app.use(express.static(path.join(process.cwd(), '/')));
+
 app.get('/', function (request, response) {
     response.render('index');
-});
-
-app.get('/yourMomma', function(request, response) {
-    response.send('your Moma is a hooker');
 });
 
 server = app.listen(3000, function () {
     var host = server.address().address,
         port = server.address().port;
 
-    console.log('Example app listening at http://%s:%s', host, port);
+    console.log('Atlas is now alive:  http://%s:%s', host, port);
 });
