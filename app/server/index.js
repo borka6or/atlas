@@ -6,7 +6,7 @@ var express = require('express'),
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 
-app.use(express.static(path.join(process.cwd(), '/')));
+app.use(express.static(path.join(process.cwd(), 'client')));
 
 app.get('/', function (request, response) {
     response.render('index');
