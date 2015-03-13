@@ -5,13 +5,15 @@ html(lang="en")
     head
         title
         
+        script(src='bower_components/moment/moment.js')
+        
     body    
-        input(type="text", placeholder="Latitude")
-        input(type="text", placeholder="Longitude")
+        input#latitudeInput(type="text", placeholder="Latitude")
+        input#longitudeInput(type="text", placeholder="Longitude")
         
         hr
         
-        button Submit
+        button#submitButton Submit
         
         hr
         
@@ -43,8 +45,5 @@ html(lang="en")
                     td
                     td
                 
-    script(type='text/javascript').        
-        (function() {
-            console.log('your momma');
-            window.alert('Butthole!');
-        })();    
+    script(type='text/javascript',src='app.js')       
+        

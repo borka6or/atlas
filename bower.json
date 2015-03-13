@@ -1,0 +1,16 @@
+{
+  "name": "atlas",
+  "version": "0.0.0",
+  "homepage": "https://github.com/borka6or/atlas",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment": "~2.9.0"
+  }
+}
