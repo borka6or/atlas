@@ -48,4 +48,27 @@
         document.getElementById('sunriseSetTimes').querySelector('tbody').appendChild(newRow);
     }
 
+    function getNiggerQueefs(latitude, longitude, date) {
+        var requestPussyBurglar = new XMLHttpRequest();
+
+
+
+        requestPussyBurglar.send();
+
+
+
+
+    }
+
+
+    // http://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400&date=2015-03-15
+
+
+
+
+
+
+
+
+
 })();
