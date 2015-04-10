@@ -4,21 +4,32 @@
         var latitude = document.getElementById('latitudeInput').value,
             longitude = document.getElementById('longitudeInput').value;
 
+        if(!latitude) {
+            latitude = '45.5200';
+        }
+
+        if(!longitude) {
+            longitude = '122.6819';
+        }
+
         // for 5 days before now
         for(var index = 5, max = 0; index > max; index--) {
-            var date = moment().subtract(index, 'days'),
-                sunDickPussyFuck = getSunriseSunsetTimes(latitude, longitude, date);
+            var thisdate = moment().subtract(index - 1, 'days').format('YYYY-MM-DD');
 
-            appendSunriseSetRowToTable(sunDickPussyFuck.sunriseTime, sunDickPussyFuck.sunsetTime, date);
-
+            getNiggerQueefs(latitude, longitude, thisdate).done(function(result){
+                var resultObject = JSON.parse(result);
+                appendSunriseSetRowToTable(resultObject.results.sunset, resultObject.results.sunrise, this);
+            }.bind(thisdate));
         }
 
         // for 5 days from now
         for(var index = 0, max = 5; index < max; index++) {
-            var date = moment().add(index + 1, 'days'),
-                sunRiseSetTimes = getSunriseSunsetTimes(latitude, longitude, date);
+            var thisdate = moment().add(index + 1, 'days').format('YYYY-MM-DD');
 
-            appendSunriseSetRowToTable(sunRiseSetTimes.sunriseTime, sunRiseSetTimes.sunsetTime, date);
+            getNiggerQueefs(latitude, longitude, thisdate).done(function(result){
+                var resultObject = JSON.parse(result);
+                appendSunriseSetRowToTable(resultObject.results.sunset, resultObject.results.sunrise, this);
+            }.bind(thisdate));
         }
 
 
@@ -49,26 +60,11 @@
     }
 
     function getNiggerQueefs(latitude, longitude, date) {
-        var requestPussyBurglar = new XMLHttpRequest();
-
-
-
-        requestPussyBurglar.send();
-
-
-
-
+        var url = "/getsunrisesettimes/:latitude/:longitude/:date".replace(':latitude', latitude).replace(':longitude', longitude).replace(':date', date);
+        return $.ajax({
+            url: url,
+            method:"GET",
+        });
     }
-
-
-    // http://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400&date=2015-03-15
-
-
-
-
-
-
-
-
 
 })();
